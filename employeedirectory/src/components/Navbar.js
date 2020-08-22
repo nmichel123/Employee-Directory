@@ -2,9 +2,11 @@ import React from 'react';
 
 function Navbar () {
     return (
-    <nav class="navbar navbar-light bg-light">
- <a class="navbar-brand" href="#"><span class="navbar-brand mb-0 h1">Navbar</span></a>
+<div>
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Home</a>
 </nav>
+</div>
     )}; 
 
 export default Navbar; 

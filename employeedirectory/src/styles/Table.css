@@ -1,0 +1,19 @@
+table {
+    border-spacing: 10px;
+    border: 1px solid gray;
+  }
+
+thead {
+    border-spacing: 10px;
+    border: 1px solid gray;
+}
+
+tbody {
+    border-spacing: 10px;
+    border: 1px solid gray;
+}
+
+td {
+    border-spacing: 10px;
+    border: 1px solid gray;
+}

@@ -1,28 +1,53 @@
-import React from 'react'; 
+import React, {useState} from 'react'; 
 import { useTable, useSortBy, useFilters } from 'react-table';
 import { columns, data } from './data';
+import Navbar from './Navbar'
+import '../styles/Table.css'
 
 function EmpTable () {
+
+    const [filterInput,setFilterInput] = useState("");
+
     const {
         getTableProps,
         getTableBodyProps,
         headerGroups,
         rows,
         prepareRow,
+        setFilter
     } = useTable ({
         columns,
         data,
     },
+    useFilters,
     useSortBy
     );
 
+    const handleFilterChange = e => {
+        const value = e.target.value || undefined;
+        setFilter("firstName", value);
+        setFilterInput(value);
+    };
+
     return (
+        <div>
+        <Navbar />
+        <input
+          value={filterInput}
+          onChange={handleFilterChange}
+          placeholder={"Search by First Name"}
+        />
         <table {...getTableProps()}>
             <thead>
                 {headerGroups.map(headerGroup => (
                     <tr {...headerGroup.getHeaderGroupProps()}>
                         {headerGroup.headers.map(column => (
-                            <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+                            <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                {column.render('Header')}
+                <span>
+                  {column.isSorted ? (column.isSortedDesc ? " 🔽" : " 🔼") : ""}
+                </span>
+                            </th>
                         ))}
                     </tr>
                 ))}
@@ -40,6 +65,7 @@ function EmpTable () {
                 })}
             </tbody>
         </table>
+        </div>
     );
 };
 

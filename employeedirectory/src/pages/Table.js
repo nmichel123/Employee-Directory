@@ -2,7 +2,7 @@ import React from 'react';
 import EmpTable from '../components/Employees';
 
 function Table () {
-    return (
+    return (     
         <div>
         <EmpTable />
         </div>
