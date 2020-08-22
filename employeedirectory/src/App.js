@@ -1,17 +1,19 @@
 import React from 'react';
-import Header from './components/Header';
-import Jumbotron from './components/Jumbotron';
-import Handshake from './assets/bigHandshake.jpg'; 
+import Home from './pages/Home';
+import EmpTable from './components/Employees';
 import './App.css';
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 
 function App() {
   return (
+  <Router>
     <div>
-<Header />
-<Jumbotron />
-<img src={Handshake} className = "handshake" alt="handshake" roundedCircle />
+<Route exact path = "/" component = {Home} />
+<Route exact path = "/table" component = {EmpTable} />
     </div>
-  )}
+    </Router>
+  )} 
 
 export default App;
+

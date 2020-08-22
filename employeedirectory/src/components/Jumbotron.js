@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 function Jumbotron () {
     return (
@@ -12,9 +14,12 @@ function Jumbotron () {
           dolor consequat qui ea culpa tempor magna nulla consectetur est occaecat.
         </p>
         <p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+        <Link to = "/table">
+            <a class="btn btn-primary btn-lg" href="../pages/Table" role="button">Search Employees</a> 
+        </Link>
         </p>
       </div>
 )};
 
 export default Jumbotron;
+
