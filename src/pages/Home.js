@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../components/Header';
 import Jumbotron from '../components/Jumbotron';
 import Handshake from '../assets/bigHandshake.jpg'; 
+import '../styles/Home.css'
 import '../App.css';
 
 function Home () {
@@ -9,7 +10,7 @@ function Home () {
         <div>
     <Header />
     <Jumbotron />
-    <img src={Handshake} className = "handshake" alt="handshake" roundedCircle />
+    <img src={Handshake} className = "handshake" alt="handshake" />
         </div>
       )}
 
